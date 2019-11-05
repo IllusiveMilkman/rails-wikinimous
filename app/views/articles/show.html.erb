@@ -1,0 +1,28 @@
+<nav class="navbar navbar-light bg-light mb-4">
+  <a class="navbar-brand">Wikinimous</a>
+  <%= link_to 'Home', articles_path, :class => 'nav-link' %>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <div class="article">
+        <h1>
+          <%= @article.title %>
+          <small>
+            <%= link_to 'edit', edit_article_path %>
+            <%= link_to 'delete', article_path(@article),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+          </small>
+        </h1>
+      </div>
+      <hr>
+      <p><%= @article.content %></p>
+    </div>
+  </div>
+</div>
+
+
+
+

@@ -1,0 +1,16 @@
+<nav class="navbar navbar-light bg-light mb-4">
+  <a class="navbar-brand">Wikinimous</a>
+  <%= link_to 'New Article', new_article_path, :class => 'nav-link' %>
+</nav>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <% @articles.each do |article| %>
+      <%= link_to article.title, article_path(article), :class => 'article' %>
+        <p style="color: #333333; margin-bottom: 30px;"><%= article.content %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
